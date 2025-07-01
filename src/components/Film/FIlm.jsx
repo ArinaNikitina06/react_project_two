@@ -1,3 +1,5 @@
+import './film.css'
+
 const Film = () => {
   return (
     <div className="film">

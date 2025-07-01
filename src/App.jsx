@@ -1,5 +1,7 @@
+import Film from "./components/Film/Film"
+
 const App = () => {
-  return 'App'
+  return <Film></Film>
 }
 
 export default App
