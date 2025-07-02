@@ -1,5 +1,7 @@
 import Button from "../UI/Button/Button";
 import "./film.scss";
+import { FaPlay, FaStar, FaShare} from "react-icons/fa";
+
 
 const Film = () => {
   return (
@@ -14,15 +16,15 @@ const Film = () => {
       <footer className="film__content">
         <div className="film__control">
           <Button use="primary" handler={() => {}} isRound>
-            +
+            <FaPlay/>
           </Button>
 
           <div className="film__control-right">
             <Button use="secondary" handler={() => {}} isRound>
-              fav
+            <FaStar/>
             </Button>
             <Button use="secondary" handler={() => {}} isRound disabled>
-              snd
+              <FaShare/>
             </Button>
           </div>
         </div>
