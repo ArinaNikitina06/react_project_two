@@ -1,3 +1,4 @@
+import Button from "../UI/Button/Button";
 import "./film.scss";
 
 const Film = () => {
@@ -11,13 +12,20 @@ const Film = () => {
         />
       </header>
       <footer className="film__content">
-        {/* <div className="film__control">
-          <button className="btn btn_primary">play</button>
+        <div className="film__control">
+          <Button use="primary" handler={() => {}} isRound>
+            +
+          </Button>
+
           <div className="film__control-right">
-            <button className="btn btn_secondary">fav</button>
-            <button className="btn btn_secondary">send</button>
+            <Button use="secondary" handler={() => {}} isRound>
+              fav
+            </Button>
+            <Button use="secondary" handler={() => {}} isRound disabled>
+              snd
+            </Button>
           </div>
-        </div> */}
+        </div>
         <h3 className="film__title">Lorem ipsum dolor sit amet</h3>
         <span className="film__staff">Lorem ipsum</span>
         <div className="film__props">
@@ -38,7 +46,11 @@ const Film = () => {
             <span className="film__props-value">Drama</span>
           </div>
         </div>
-        <button className="btn btn_primary">show film</button>
+        <div className="film__btn">
+          <Button use="primary" handler={() => console.log("show film")}>
+            show film
+          </Button>
+        </div>
       </footer>
     </div>
   );
