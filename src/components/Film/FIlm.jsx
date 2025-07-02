@@ -1,7 +1,7 @@
+import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
 import { FaPlay, FaStar, FaShare} from "react-icons/fa";
-
 
 const Film = () => {
   return (
@@ -29,7 +29,7 @@ const Film = () => {
           </div>
         </div>
         <h3 className="film__title">Lorem ipsum dolor sit amet</h3>
-        <span className="film__staff">Lorem ipsum</span>
+        <div className="film__staff"><Staff>Barry Janckens</Staff></div>
         <div className="film__props">
           <div className="film__props-item">
             <span className="film__props-text">Gener</span>
