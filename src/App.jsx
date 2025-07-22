@@ -1,7 +1,10 @@
-import FIlm from "./components/Film/FIlm"
+import FilmsList from "./components/FilmsList/FilmsList"
 
 const App = () => {
- return <FIlm></FIlm>
+  return <div className="container">
+    <FilmsList></FilmsList>
+  </div>
+
 }
 
 export default App
