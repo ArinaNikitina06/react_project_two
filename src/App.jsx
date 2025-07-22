@@ -1,7 +1,7 @@
-import Film from "./components/Film/Film"
+import FIlm from "./components/Film/FIlm"
 
 const App = () => {
-  return <Film></Film>
+ return <FIlm></FIlm>
 }
 
 export default App

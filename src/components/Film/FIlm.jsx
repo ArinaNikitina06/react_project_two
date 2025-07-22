@@ -3,7 +3,7 @@ import Button from "../UI/Button/Button";
 import "./film.scss";
 import { FaPlay, FaStar, FaShare} from "react-icons/fa";
 
-const Film = () => {
+const FIlm = () => {
   return (
     <div className="film">
       <header className="film__img-wrapper">
@@ -58,4 +58,4 @@ const Film = () => {
   );
 };
 
-export default Film;
+export default FIlm;
