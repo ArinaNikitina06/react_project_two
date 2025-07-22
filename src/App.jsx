@@ -1,10 +1,13 @@
-import FilmsList from "./components/FilmsList/FilmsList"
+import PageHome from "./pages/PageHome";
 
 const App = () => {
-  return <div className="container">
-    <FilmsList></FilmsList>
-  </div>
+  return (
+    <>
+      <div className="container">
+      <PageHome></PageHome>
+      </div>
+    </>
+  );
+};
 
-}
-
-export default App
+export default App;
