@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
-import { FaPlay, FaStar, FaShare} from "react-icons/fa";
+import { FaPlay, FaStar, FaRegStar, FaShare } from "react-icons/fa";
 
 const FIlm = () => {
+  const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
+
   return (
     <div className="film">
       <header className="film__img-wrapper">
@@ -16,20 +19,22 @@ const FIlm = () => {
       <footer className="film__content">
         <div className="film__control">
           <Button use="primary" handler={() => {}} isRound>
-            <FaPlay/>
+            <FaPlay />
           </Button>
 
           <div className="film__control-right">
-            <Button use="secondary" handler={() => {}} isRound>
-            <FaStar/>
+            <Button use="secondary" handler={() => setFavorite(!favorite)} isRound>
+              {favorite ? <FaStar /> : <FaRegStar />}
             </Button>
             <Button use="secondary" handler={() => {}} isRound disabled>
-              <FaShare/>
+              <FaShare />
             </Button>
           </div>
         </div>
         <h3 className="film__title">Lorem ipsum dolor sit amet</h3>
-        <div className="film__staff"><Staff>Barry Janckens</Staff></div>
+        <div className="film__staff">
+          <Staff>Barry Janckens</Staff>
+        </div>
         <div className="film__props">
           <div className="film__props-item">
             <span className="film__props-text">Gener</span>
