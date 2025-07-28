@@ -1,20 +1,28 @@
-import { useState } from "react";
+import {useState } from "react";
 import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
-import { FaPlay, FaStar, FaRegStar, FaShare } from "react-icons/fa";
+import { FaPlay, FaStar, FaRegStar, FaShare, FaImage } from "react-icons/fa";
 
-const FIlm = () => {
+const FIlm = ({ name, poster, alternativeName, genres, year, type, rating }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
 
   return (
     <div className="film">
       <header className="film__img-wrapper">
-        <img
+        {/* <img
           className="film__img"
-          src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67a7cf0d8fb6af7e47d317ee_67a7d16efb735d388837540d/scale_1200"
+          src={poster ? poster : ''}
           alt=""
-        />
+        /> */}
+
+        {
+          poster ? <img
+          className="film__img"
+          src={poster}
+          alt=""
+        /> : <FaImage />
+        }
       </header>
       <footer className="film__content">
         <div className="film__control">
@@ -23,7 +31,7 @@ const FIlm = () => {
           </Button>
 
           <div className="film__control-right">
-            <Button use="secondary" handler={() => setFavorite(!favorite)} isRound>
+            <Button use="secondary" handler={() => setFavorite((currentFavorite) => !currentFavorite)} isRound>
               {favorite ? <FaStar /> : <FaRegStar />}
             </Button>
             <Button use="secondary" handler={() => {}} isRound disabled>
@@ -31,30 +39,30 @@ const FIlm = () => {
             </Button>
           </div>
         </div>
-        <h3 className="film__title">Lorem ipsum dolor sit amet</h3>
+        <h3 className="film__title">{name ? name : "Название не найдено"}</h3>
         <div className="film__staff">
-          <Staff>Barry Janckens</Staff>
+          <Staff>{alternativeName ? alternativeName : "Название не найдено"}</Staff>
         </div>
         <div className="film__props">
           <div className="film__props-item">
             <span className="film__props-text">Gener</span>
-            <span className="film__props-value">Drama</span>
+            <span className="film__props-value">{genres ? genres[0].name : "no"}</span>
           </div>
           <div className="film__props-item">
-            <span className="film__props-text">Gener</span>
-            <span className="film__props-value">Drama</span>
+            <span className="film__props-text">Release</span>
+            <span className="film__props-value">{year ? year : "no"}</span>
           </div>
           <div className="film__props-item">
-            <span className="film__props-text">Gener</span>
-            <span className="film__props-value">Drama</span>
+            <span className="film__props-text">type</span>
+            <span className="film__props-value">{type ? type : "no"}</span>
           </div>
           <div className="film__props-item">
-            <span className="film__props-text">Gener</span>
-            <span className="film__props-value">Drama</span>
+            <span className="film__props-text">iMDB</span>
+            <span className="film__props-value">{rating ? rating : 'no'}</span>
           </div>
         </div>
         <div className="film__btn">
-          <Button use="primary" handler={() => console.log("show film")}>
+          <Button use="primary" handler={() => console.log("yes")}>
             show film
           </Button>
         </div>

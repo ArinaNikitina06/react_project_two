@@ -1,17 +1,23 @@
-import FilmsList from '../components/FilmsList/FilmsList';
-import Header from '../components/Header/Header';
+import { useEffect, useState } from "react";
+import FilmsList from "../components/FilmsList/FilmsList";
+import Header from "../components/Header/Header";
 
-import'./pageHome.scss'
+import "./pageHome.scss";
+import { getMovies } from "../API/moviesAPI";
 
 const PageHome = () => {
-   return (
-     <div className="page-home">
-       <Header></Header>
-       <FilmsList></FilmsList>
-     </div>
-   );
- 
+  const [movies, setMovies] = useState([])
 
-}
+  useEffect(() => {
+    getMovies().then((data) => setMovies(data.docs))
+  }, []);
+  
+  return (
+    <div className="page-home">
+      <Header></Header>
+      <FilmsList films={movies}></FilmsList>
+    </div>
+  );
+};
 
-export default PageHome
+export default PageHome;
