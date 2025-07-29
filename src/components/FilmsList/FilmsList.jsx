@@ -5,9 +5,9 @@ const FilmsList = ({ films }) => {
   console.log(films);
   return (
     <div className="films-list">
-      {films.map(({name, poster, alternativeName, genres, year, type, rating}) => {
+      {films.map(({id, name, poster, alternativeName, genres, year, type, rating}) => {
         return (
-          <FIlm name={name} poster={poster} alternativeName={alternativeName} genres={genres} year={year} type={type} rating={rating.imdb}></FIlm>
+          <FIlm id={id} key={id} name={name} poster={poster} alternativeName={alternativeName} genres={genres} year={year} type={type} rating={rating.imdb} ></FIlm>
         );
       })}
     </div>

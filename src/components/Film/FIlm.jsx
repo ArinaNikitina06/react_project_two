@@ -4,18 +4,22 @@ import Button from "../UI/Button/Button";
 import "./film.scss";
 import { FaPlay, FaStar, FaRegStar, FaShare, FaImage } from "react-icons/fa";
 
-const FIlm = ({ name, poster, alternativeName, genres, year, type, rating }) => {
+// type FIlmType = { 
+//   name: string
+//   poster: string
+//   alternativeName: string
+//   genres: string
+//   year: number
+//   type: string
+//   rating: number,
+// }
+
+const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
 
   return (
     <div className="film">
       <header className="film__img-wrapper">
-        {/* <img
-          className="film__img"
-          src={poster ? poster : ''}
-          alt=""
-        /> */}
-
         {
           poster ? <img
           className="film__img"
