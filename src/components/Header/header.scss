@@ -12,6 +12,12 @@
 &__nav{
     display: flex;
     align-items: center;
-    
+}
+
+&__btns{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: aliceblue;
 }
 }

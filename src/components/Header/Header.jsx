@@ -1,20 +1,35 @@
 import Logo from '../Logo/Logo'
 import Nav from '../Nav/Nav';
 import NavItem from '../NavItem/NavItem';
+import Button from '../UI/Button/Button';
 import './header.scss'
-import {FaStar} from  "react-icons/fa";
+import {FaStar, FaBoxOpen, FaRegFrownOpen} from  "react-icons/fa";
 
 const Header = () => {
-    return <header className="header">
-        <Logo>Logo <FaStar /></Logo>
+    return (
+      <header className="header">
+        <Logo>
+          Logo <FaStar />
+        </Logo>
         <div className="header__nav">
-            <Nav>
-                <NavItem href="home" active>Home</NavItem>
-                <NavItem href="top">top 250 <FaStar/></NavItem>
-                <NavItem href="favorite">favorite films</NavItem>
-            </Nav>
+          <Nav>
+            <NavItem href="home" active>
+              Home
+            </NavItem>
+            <NavItem href="top">
+              top 250 <FaStar />
+            </NavItem>
+            <NavItem href="favorite">favorite films</NavItem>
+          </Nav>
         </div>
-    </header>
+        <div className="header__btns">
+          <Button use="secondary" handler={() => console.log("Вход")}>
+            Вход <FaBoxOpen />
+          </Button>
+          <Button use="primary" handler={()=> console.log('регистрация')}>Регистрация<FaRegFrownOpen/></Button>
+        </div>
+      </header>
+    );
 }
 
 export default Header

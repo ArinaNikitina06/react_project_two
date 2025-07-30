@@ -2,6 +2,10 @@
   cursor: pointer;
   padding: 7px 10px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
   &_primary {
     background-color: #fd2770;
@@ -14,9 +18,9 @@
   &_round {
     border-radius: 50%;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     width: 35px;
     height: 35px;
   }
