@@ -9,8 +9,9 @@ const Header = () => {
         <Logo>Logo <FaStar /></Logo>
         <div className="header__nav">
             <Nav>
-                <NavItem>Home</NavItem>
-                <NavItem>Favorite films</NavItem>
+                <NavItem href="home" active>Home</NavItem>
+                <NavItem href="top">top 250 <FaStar/></NavItem>
+                <NavItem href="favorite">favorite films</NavItem>
             </Nav>
         </div>
     </header>
