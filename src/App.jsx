@@ -1,5 +1,9 @@
+import { useState } from "react";
+import Button from "./components/UI/Button/Button";
 import Modal from "./components/UI/Modal/Modal";
 import PageHome from "./pages/PageHome";
+
+
 
 const App = () => {
   // выполняется после первой отрисовки комп. 
@@ -31,15 +35,19 @@ const App = () => {
   //   }
     
   // }, [])
+
+//  const [isActiveModal, setActiveModal] = useState(false)
   
-  return (
+  return ( 
     <>
-      {/* <div className="container">
+      <div className="container">
       <PageHome></PageHome>
-      </div> */}
-      <Modal>
+      </div>
+
+      {/* <Modal isActive={isActiveModal} closeHandler={() => setActiveModal(false)} >
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, atque.
       </Modal>
+      <Button use='secondary' handler={() => setActiveModal(true)}>Open</Button> */}
     </>
   );
   
