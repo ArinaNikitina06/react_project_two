@@ -1,3 +1,4 @@
+import Modal from "./components/UI/Modal/Modal";
 import PageHome from "./pages/PageHome";
 
 const App = () => {
@@ -33,9 +34,12 @@ const App = () => {
   
   return (
     <>
-      <div className="container">
+      {/* <div className="container">
       <PageHome></PageHome>
-      </div>
+      </div> */}
+      <Modal>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, atque.
+      </Modal>
     </>
   );
   
