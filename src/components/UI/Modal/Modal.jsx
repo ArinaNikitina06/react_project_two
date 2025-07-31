@@ -10,12 +10,20 @@ const Modal = ({ children, isActive, closeHandler }) => {
     }
   };
 
+  const clickInEmptyHandler = (event) => {
+    if(!event.target.closest('.modal__wrapper')){
+        closeHandler();
+    }
+  }
+
   useEffect(() => {
     document.addEventListener("keydown", keyPressEscHandler);
+    document.addEventListener("mousedown", clickInEmptyHandler);
 
 		// call before destroy Modal
     return () => {
       document.removeEventListener("keydown", keyPressEscHandler);
+      document.removeEventListener("mousedown", clickInEmptyHandler);
     };
   }, []);
 
