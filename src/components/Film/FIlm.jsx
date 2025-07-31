@@ -2,7 +2,7 @@ import {useState } from "react";
 import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
-import { FaPlay, FaStar, FaRegStar, FaShare, FaImage } from "react-icons/fa";
+import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/fa";
 
 // type FIlmType = { 
 //   name: string
@@ -19,15 +19,7 @@ const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating })
 
   return (
     <div className="film">
-      <header className="film__img-wrapper">
-        {
-          poster ? <img
-          className="film__img"
-          src={poster}
-          alt=""
-        /> : <FaImage />
-        }
-      </header>
+      <header className="film__img-wrapper">{poster ? <img className="film__img" src={poster} alt="" /> : <FaImage />}</header>
       <footer className="film__content">
         <div className="film__control">
           <Button use="primary" handler={() => {}} isRound>
@@ -40,6 +32,9 @@ const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating })
             </Button>
             <Button use="secondary" handler={() => {}} isRound disabled>
               <FaShare />
+            </Button>
+            <Button use="secondary" handler={()=>{}} isRound>
+              <FaUser />
             </Button>
           </div>
         </div>
@@ -62,7 +57,7 @@ const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating })
           </div>
           <div className="film__props-item">
             <span className="film__props-text">iMDB</span>
-            <span className="film__props-value">{rating ? rating : 'no'}</span>
+            <span className="film__props-value">{rating ? rating : "no"}</span>
           </div>
         </div>
         <div className="film__btn">
