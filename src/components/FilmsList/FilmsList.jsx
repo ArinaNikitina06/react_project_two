@@ -1,16 +1,35 @@
+import { useState } from "react";
 import FIlm from "../Film/FIlm";
+import Modal from "../UI/Modal/Modal";
 import "./filmList.scss";
 
 const FilmsList = ({ films }) => {
-  console.log(films);
+    const [isActivActorsModal, setActivActorsModal] = useState(false)
+  // console.log(films);
   return (
-    <div className="films-list">
-      {films.map(({id, name, poster, alternativeName, genres, year, type, rating}) => {
-        return (
-          <FIlm id={id} key={id} name={name} poster={poster} alternativeName={alternativeName} genres={genres} year={year} type={type} rating={rating.imdb} ></FIlm>
-        );
-      })}
-    </div>
+    <>
+      <div className="films-list">
+        {films.map(({ id, name, poster, alternativeName, genres, year, type, rating }) => {
+          return (
+            <FIlm
+              id={id}
+              key={id}
+              name={name}
+              poster={poster}
+              alternativeName={alternativeName}
+              genres={genres}
+              year={year}
+              type={type}
+              rating={rating.imdb}
+              openActorsModalHandler={() => setActivActorsModal(true)}
+            ></FIlm>
+          );
+        })}
+      </div>
+      <Modal isActive={isActivActorsModal} closeHandler={() => setActivActorsModal(false)}>
+        actors
+      </Modal>
+    </>
   );
 };
 

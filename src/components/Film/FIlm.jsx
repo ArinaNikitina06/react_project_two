@@ -14,7 +14,7 @@ import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/
 //   rating: number,
 // }
 
-const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating }) => {
+const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating, openActorsModalHandler }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
 
   return (
@@ -33,7 +33,7 @@ const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating })
             <Button use="secondary" handler={() => {}} isRound disabled>
               <FaShare />
             </Button>
-            <Button use="secondary" handler={()=>{}} isRound>
+            <Button use="secondary" handler={openActorsModalHandler} isRound>
               <FaUser />
             </Button>
           </div>

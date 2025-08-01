@@ -36,18 +36,11 @@ const App = () => {
     
   // }, [])
 
- const [isActiveModal, setActiveModal] = useState(false)
-  
   return ( 
     <>
-      {/* <div className="container">
+      <div className="container">
       <PageHome></PageHome>
-      </div> */}
-
-      <Modal isActive={isActiveModal} closeHandler={() => setActiveModal(false)} >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, atque.
-      </Modal>
-      <Button use='secondary' handler={() => setActiveModal(true)}>Open</Button>
+      </div>
     </>
   );
   
