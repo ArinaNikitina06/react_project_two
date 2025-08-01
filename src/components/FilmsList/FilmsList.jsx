@@ -5,8 +5,15 @@ import "./filmList.scss";
 import ActorsList from "../ActorsList/ActorsList";
 
 const FilmsList = ({ films }) => {
-    const [isActivActorsModal, setActivActorsModal] = useState(false)
+  const [isActivActorsModal, setActivActorsModal] = useState(false);
   // console.log(films);
+  const [currentIDFilm, setCurrentIDFilm] = useState(0);
+
+  const openActorsModalHandler = (id) => {
+    setCurrentIDFilm(id)
+    setActivActorsModal(true)
+  };
+
   return (
     <>
       <div className="films-list">
@@ -22,7 +29,7 @@ const FilmsList = ({ films }) => {
               year={year}
               type={type}
               rating={rating.imdb}
-              openActorsModalHandler={() => setActivActorsModal(true)}
+              openActorsModalHandler={() => openActorsModalHandler(id)}
             ></FIlm>
           );
         })}
