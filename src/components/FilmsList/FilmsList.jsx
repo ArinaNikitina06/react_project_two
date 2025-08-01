@@ -2,6 +2,7 @@ import { useState } from "react";
 import FIlm from "../Film/FIlm";
 import Modal from "../UI/Modal/Modal";
 import "./filmList.scss";
+import ActorsList from "../ActorsList/ActorsList";
 
 const FilmsList = ({ films }) => {
     const [isActivActorsModal, setActivActorsModal] = useState(false)
@@ -27,7 +28,7 @@ const FilmsList = ({ films }) => {
         })}
       </div>
       <Modal isActive={isActivActorsModal} closeHandler={() => setActivActorsModal(false)}>
-        actors
+        <ActorsList></ActorsList>
       </Modal>
     </>
   );

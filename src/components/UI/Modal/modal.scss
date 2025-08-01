@@ -10,14 +10,17 @@
   align-items: center;
 
   &__wrapper {
-    width: 30vw;
-    height: auto;
+    // width: 70vw;
+    // height: 60vh;
     position: relative;
   }
 
   &__content {
+    width: 70vw;
+    height: 60vh;
     background-color: #fff;
     padding: 10px;
+    overflow-y: auto;
   }
 
   &__btn {

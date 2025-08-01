@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageHome from "./pages/PageHome";
-import Actor from "./components/Actor/Actor";
+
 
 const App = () => {
   // выполняется после первой отрисовки комп.
@@ -35,10 +35,9 @@ const App = () => {
 
   return (
     <>
-      {/* <div className="container">
+      <div className="container">
       <PageHome></PageHome>
-      </div> */}
-      <Actor></Actor>
+      </div>
     </>
   );
 };
