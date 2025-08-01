@@ -1,12 +1,9 @@
 import { useState } from "react";
-import Button from "./components/UI/Button/Button";
-import Modal from "./components/UI/Modal/Modal";
 import PageHome from "./pages/PageHome";
-
-
+import Actor from "./components/Actor/Actor";
 
 const App = () => {
-  // выполняется после первой отрисовки комп. 
+  // выполняется после первой отрисовки комп.
   // это асинхронный хук
 
   // useEffect(() => {
@@ -26,24 +23,24 @@ const App = () => {
   //     console.log('scroll');
   //   })
 
-  //   // 1 component destroy 
+  //   // 1 component destroy
   //   // 2 масив зависимостей изменился
   //   return () => {
   //     document.removeEventListener('scroll', () => {
   //     console.log('scroll');
   //   })
   //   }
-    
+
   // }, [])
 
-  return ( 
+  return (
     <>
-      <div className="container">
+      {/* <div className="container">
       <PageHome></PageHome>
-      </div>
+      </div> */}
+      <Actor></Actor>
     </>
   );
-  
 };
 
 export default App;
