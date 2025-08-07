@@ -1,18 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FIlm from "../Film/FIlm";
 import Modal from "../UI/Modal/Modal";
 import "./filmList.scss";
 import ActorsList from "../ActorsList/ActorsList";
+import { getMovieById } from "../../API/moviesAPI";
 
 const FilmsList = ({ films }) => {
   const [isActivActorsModal, setActivActorsModal] = useState(false);
   // console.log(films);
   const [currentIDFilm, setCurrentIDFilm] = useState(0);
+  const [currentActors, setCurrentActors] = useState([])
 
   const openActorsModalHandler = (id) => {
     setCurrentIDFilm(id)
     setActivActorsModal(true)
   };
+
+  useEffect(() => {
+    if (currentIDFilm === 0) {
+      return;
+    }
+
+    getMovieById(currentIDFilm).then((film) => setCurrentActors(film.persons));
+  }, [currentIDFilm]);
 
   return (
     <>
@@ -35,7 +45,7 @@ const FilmsList = ({ films }) => {
         })}
       </div>
       <Modal isActive={isActivActorsModal} closeHandler={() => setActivActorsModal(false)}>
-        <ActorsList></ActorsList>
+        <ActorsList currentActors={currentActors}></ActorsList>
       </Modal>
     </>
   );

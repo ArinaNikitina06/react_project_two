@@ -16,7 +16,6 @@ import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/
 
 const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating, openActorsModalHandler }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
-  console.log(poster);
 
   return (
     <div className="film">
