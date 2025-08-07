@@ -16,10 +16,11 @@ import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/
 
 const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating, openActorsModalHandler }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
+  console.log(poster);
 
   return (
     <div className="film">
-      <header className="film__img-wrapper">{poster ? <img className="film__img" src={poster} alt="" /> : <FaImage />}</header>
+      <header className="film__img-wrapper">{poster ? <img className="film__img" src={poster.previewUrl} alt="" /> : <FaImage />}</header>
       <footer className="film__content">
         <div className="film__control">
           <Button use="primary" handler={() => {}} isRound>
