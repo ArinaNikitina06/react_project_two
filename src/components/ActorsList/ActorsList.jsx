@@ -5,7 +5,7 @@ const ActorsList = ({currentActors}) => {
   return (
     <div className="actors-list">
       {currentActors.map(({id, name, enName, enProfession, profession, photo }) => (
-        <Actor  key={id} id={id} name={name} enName={enName} enProfession={enProfession} profession={profession} photo={photo}></Actor>
+        <Actor key={id} id={id} name={name} enName={enName} enProfession={enProfession} profession={profession} photo={photo}></Actor>
       ))}
     </div>
   );

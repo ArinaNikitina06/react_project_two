@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PageHome from "./pages/PageHome";
 
-
 const App = () => {
   // выполняется после первой отрисовки комп.
   // это асинхронный хук
@@ -36,7 +35,7 @@ const App = () => {
   return (
     <>
       <div className="container">
-      <PageHome></PageHome>
+        <PageHome></PageHome>
       </div>
     </>
   );

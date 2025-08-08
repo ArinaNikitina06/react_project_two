@@ -33,14 +33,21 @@
     color: #a29e9e;
     margin-top: -10px;
   }
-  &__btn-wrapper{
-color: rgb(231, 231, 231);
-}
+  &__btn-wrapper {
+    color: rgb(231, 231, 231);
+  }
   &__info-films {
     font-size: 13px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
   }
 
   &__info-films-best {
     font-weight: bold;
+  }
+
+  &__info-films-item {
+    // border-right: 1px solid #fd2770;
   }
 }
