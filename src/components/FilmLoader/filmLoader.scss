@@ -1,0 +1,18 @@
+.film-loader {
+  width: 300px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #c0bec1;
+  color: rgb(0, 0, 0);
+  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
