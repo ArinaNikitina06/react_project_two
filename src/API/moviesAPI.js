@@ -1,7 +1,7 @@
-import { API_KEY, BASE_URL_API } from "../config";
+import { API_KEY, BASE_URL_API, PROXY } from "../config";
 
 export const getMovies = () => {
-    return fetch(`${BASE_URL_API}/movie`, {
+    return fetch(`${PROXY}/${BASE_URL_API}/movie`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -9,11 +9,11 @@ export const getMovies = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => data)
+      .then((data) => data);
   };
 
 export const getMovieById = (id) => {
-  return fetch(`${BASE_URL_API}/movie/${id}`, {
+  return fetch(`${PROXY}/${BASE_URL_API}/movie/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

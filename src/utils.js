@@ -17,3 +17,10 @@ export const getSortedMoviesByRating = (movies) => {
 
   return newMovies;
 };
+
+export const getShortStr = (str = "", countSlice, separator = "...") => {
+  if (str.length >= countSlice) {
+    return str.slice(0, countSlice - separator.length) + separator
+  }
+  return str;
+};

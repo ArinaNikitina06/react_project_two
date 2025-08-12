@@ -7,14 +7,14 @@ import { getSortedMoviesByRating } from "../../utils";
 
 
 const Actor = ({ id, name, enName, enProfession, profession, photo }) => {
-  const [fullActor, setFullActor] = useState({});
+  // const [fullActor, setFullActor] = useState({});
 
-  useEffect(() => {
-    getActorById(id).then((actor) =>  setFullActor({
-      ...actor,
-      movies: getSortedMoviesByRating(actor.movies)
-    }));
-  }, []);
+  // useEffect(() => {
+  //   getActorById(id).then((actor) =>  setFullActor({
+  //     ...actor,
+  //     movies: getSortedMoviesByRating(actor.movies)
+  //   }));
+  // }, []);
 
   return (
     <div className="actor">
@@ -29,11 +29,11 @@ const Actor = ({ id, name, enName, enProfession, profession, photo }) => {
         </div>
         <div className="actor__info-films">
           <span className="actor__info-films-best">Лучшие работы:</span>
-          {!fullActor.movies && 'работы загружаются'}
+          {/* {!fullActor.movies && 'работы загружаются'}
 
           {fullActor.movies && fullActor.movies.map((movie, i) => {
             return <span className="actor__info-films-item" key={i}>{movie.name}</span>
-          })}
+          })} */}
         </div>
       </div>
     </div>

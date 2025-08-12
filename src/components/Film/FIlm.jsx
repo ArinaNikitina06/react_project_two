@@ -3,6 +3,7 @@ import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
 import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/fa";
+import { getShortStr } from "../../utils";
 
 // type FIlmType = { 
 //   name: string
@@ -45,7 +46,7 @@ const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating, o
         <div className="film__props">
           <div className="film__props-item">
             <span className="film__props-text">Gener</span>
-            <span className="film__props-value">{genres ? genres[0].name : "no"}</span>
+            <span className="film__props-value">{genres ? getShortStr(genres[0].name, 7) : "no"}</span>
           </div>
           <div className="film__props-item">
             <span className="film__props-text">Release</span>
