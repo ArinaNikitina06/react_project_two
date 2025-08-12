@@ -4,6 +4,7 @@ import Modal from "../UI/Modal/Modal";
 import "./filmList.scss";
 import ActorsList from "../ActorsList/ActorsList";
 import { getMovieById } from "../../API/moviesAPI";
+import { createPortal } from "react-dom";
 
 const FilmsList = ({ films }) => {
   const [isActivActorsModal, setActivActorsModal] = useState(false);
@@ -44,9 +45,12 @@ const FilmsList = ({ films }) => {
           );
         })}
       </div>
-      <Modal isActive={isActivActorsModal} closeHandler={() => setActivActorsModal(false)}>
-        <ActorsList currentActors={currentActors}></ActorsList>
-      </Modal>
+      {createPortal(
+        <Modal isActive={isActivActorsModal} closeHandler={() => setActivActorsModal(false)}>
+          <ActorsList currentActors={currentActors}></ActorsList>
+        </Modal>,
+        document.querySelector('.modals')
+      )}
     </>
   );
 };
