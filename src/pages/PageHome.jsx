@@ -7,15 +7,21 @@ import { getMovies } from "../API/moviesAPI";
 
 const PageHome = () => {
   const [movies, setMovies] = useState([])
-
-  useEffect(() => {
-    getMovies().then((data) => setMovies(data.docs))
-  }, []);
+  const [pageFilms, setPageFilms] = useState(1)
   
+  const setPageFilmsHandler = () => {
+    setPageFilms(pageFilms + 1)
+  }
+  
+  useEffect(() => {
+    getMovies(10, pageFilms).then((data) => setMovies([...movies, ...data.docs]));
+  }, [pageFilms]);
+  
+
   return (
     <div className="page-home">
       <Header></Header>
-      <FilmsList films={movies}></FilmsList>
+      <FilmsList films={movies} setPageFilmsHandler={setPageFilmsHandler}></FilmsList>
     </div>
   );
 };

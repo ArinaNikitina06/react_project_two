@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import FilmLoader from "../FilmLoader/FilmLoader";
 import { FaArrowRight } from "react-icons/fa";
 
-const FilmsList = ({ films }) => {
+const FilmsList = ({ films, setPageFilmsHandler }) => {
   const [isActivActorsModal, setActivActorsModal] = useState(false);
   // console.log(films);
   const [currentIDFilm, setCurrentIDFilm] = useState(0);
@@ -46,7 +46,7 @@ const FilmsList = ({ films }) => {
             ></FIlm>
           );
         })}
-        <FilmLoader handler={() => {}}>
+        <FilmLoader handler={setPageFilmsHandler}>
           Добавить еще <FaArrowRight />{" "}
         </FilmLoader>
       </div>
