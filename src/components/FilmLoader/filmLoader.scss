@@ -15,4 +15,10 @@
   &:hover {
     transform: scale(1.01);
   }
+
+  &_disabled {
+    cursor: not-allowed;
+    background-color: #747474;
+    opacity: .5;
+  }
 }
