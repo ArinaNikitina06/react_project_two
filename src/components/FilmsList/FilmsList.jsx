@@ -10,7 +10,6 @@ import { FaArrowRight } from "react-icons/fa";
 
 const FilmsList = ({ films, setPageFilmsHandler, isMoviesLoading }) => {
   const [isActivActorsModal, setActivActorsModal] = useState(false);
-  // console.log(films);
   const [currentIDFilm, setCurrentIDFilm] = useState(0);
   const [currentActors, setCurrentActors] = useState([]);
 
@@ -46,9 +45,11 @@ const FilmsList = ({ films, setPageFilmsHandler, isMoviesLoading }) => {
             ></FIlm>
           );
         })}
-        <FilmLoader handler={setPageFilmsHandler} isLoading={isMoviesLoading}>
-          Добавить еще <FaArrowRight />{" "}
-        </FilmLoader>
+        {films.length > 0 && (
+          <FilmLoader handler={setPageFilmsHandler} isLoading={isMoviesLoading}>
+            Добавить еще <FaArrowRight />
+          </FilmLoader>
+        )}
       </div>
 
       {createPortal(
