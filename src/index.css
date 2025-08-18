@@ -2,11 +2,11 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background: linear-gradient(rgb(44, 51, 51),  rgb(10, 12, 12))
 }
 
 .container {
   width: 100%;
   max-width: 1250px;
   margin: 0 auto;
-  /* background-color: aqua; */
 }

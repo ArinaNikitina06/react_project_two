@@ -4,20 +4,23 @@
   height: 70px;
   display: flex;
   justify-content: space-between;
-  background-color: aquamarine;
+  background-color: rgb(69, 69, 69);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   // position: fixed;
   // top: 0;
   // left: 0;
   // z-index: 1;
-&__nav{
+  margin-bottom: 10px;
+  &__nav {
     display: flex;
     align-items: center;
-}
+  }
 
-&__btns{
+  &__btns {
     display: flex;
     gap: 5px;
     align-items: center;
     color: aliceblue;
-}
+  }
 }
