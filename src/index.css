@@ -2,7 +2,11 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(rgb(44, 51, 51),  rgb(10, 12, 12))
+  background: linear-gradient(rgb(44, 51, 51),  rgb(10, 12, 12));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 }
 
 .container {

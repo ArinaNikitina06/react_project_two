@@ -1,11 +1,12 @@
-import {useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
-import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser} from "react-icons/fa";
+import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser } from "react-icons/fa";
 import { getShortStr } from "../../utils";
+import ColorThief from "colorthief";
 
-// type FIlmType = { 
+// type FIlmType = {
 //   name: string
 //   poster: string
 //   alternativeName: string
@@ -18,8 +19,23 @@ import { getShortStr } from "../../utils";
 const FIlm = ({ id, name, poster, alternativeName, genres, year, type, rating, openActorsModalHandler }) => {
   const [favorite, setFavorite] = useState(false); // useState -> [currentState, setCurrentState]
 
+  const mouseEnterHandler = () => {
+    if (poster === undefined) {
+      return;
+    }
+
+    document.querySelector("body").style.backgroundImage = `url('${poster.previewUrl}')`;
+  };
+
+  const mouseLeaveHandler = () => {
+    if (poster === undefined) {
+      return;
+    }
+    document.querySelector("body").style.backgroundImage = ``;
+  };
+
   return (
-    <div className="film">
+    <div className="film" onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
       <header className="film__img-wrapper">{poster ? <img className="film__img" src={poster.previewUrl} alt="" /> : <FaImage />}</header>
       <footer className="film__content">
         <div className="film__control">
