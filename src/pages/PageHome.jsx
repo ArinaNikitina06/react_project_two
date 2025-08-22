@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import FilmsList from "../components/FilmsList/FilmsList";
 import Header from "../components/Header/Header";
 
 import "./pageHome.scss";
 import { getMovies } from "../API/moviesAPI";
 import { ToastContainer, toast } from "react-toastify";
+import { getAverageRating } from "../utils";
 
 const PageHome = () => {
   const [movies, setMovies] = useState([]);
@@ -45,17 +46,16 @@ const PageHome = () => {
     toast.success(`loaded ${movies.length} movies`);
   }, [movies]);
 
-  /* 
-  
-  +1. надо понимать когда идет загрузка
-  +2. надо понимать если ли ошибки в момент загрузки
-  +3. надо понимать а можем ли мы еще загужать (30) -> 10 10 10 ???
-  
-  */
+  const getAverageRatingMemo = useMemo(() => {
+    if (movies.length > 0) {
+      return getAverageRating(movies);
+    }
+    return 0;
+  }, [movies]);
 
   return (
     <div className="page-home">
-      <Header></Header>
+      <Header averageRating={getAverageRatingMemo}></Header>
       <FilmsList films={movies} setPageFilmsHandler={setPageFilmsHandler} isMoviesLoading={isMoviesLoading}></FilmsList>
       <ToastContainer position="top-center" theme="dark"></ToastContainer>
     </div>

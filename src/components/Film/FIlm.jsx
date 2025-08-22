@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import Staff from "../Staff/Staff";
 import Button from "../UI/Button/Button";
 import "./film.scss";
 import { FaPlay, FaStar, FaRegStar, FaShare, FaImage, FaUser } from "react-icons/fa";
 import { getShortStr } from "../../utils";
 import ColorThief from "colorthief";
+
 
 // type FIlmType = {
 //   name: string
