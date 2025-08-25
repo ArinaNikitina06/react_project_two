@@ -6,6 +6,7 @@ import "./pageHome.scss";
 import { getMovies } from "../API/moviesAPI";
 import { ToastContainer, toast } from "react-toastify";
 import { getAverageRating } from "../utils";
+import Search from "../components/Search/Search";
 
 const PageHome = () => {
   const [movies, setMovies] = useState([]);
@@ -56,6 +57,7 @@ const PageHome = () => {
   return (
     <div className="page-home">
       <Header averageRating={getAverageRatingMemo}></Header>
+      <Search/>
       <FilmsList films={movies} setPageFilmsHandler={setPageFilmsHandler} isMoviesLoading={isMoviesLoading}></FilmsList>
       <ToastContainer position="top-center" theme="dark"></ToastContainer>
     </div>
