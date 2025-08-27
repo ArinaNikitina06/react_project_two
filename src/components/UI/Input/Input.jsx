@@ -21,7 +21,7 @@ const Input = ({use="primary", type = 'text', placeholder, value, handler, isFoc
 			}
 		},[])
 
-    return <input type={type} placeholder={placeholder} value={value} onInput={(event) => handler(event.target.value)} use={use} ref={inputRef} />
+    return <input className='input' type={type} placeholder={placeholder} value={value} onInput={(event) => handler(event.target.value)} use={use} ref={inputRef} />
 }
 
 /*
