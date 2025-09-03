@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import './input.scss'
+import { useEffect, useRef, useCallback } from "react";
+import "./input.scss";
 
 // type TInputUse = 'primary' | 'secondary';
 
@@ -12,17 +12,19 @@ import './input.scss'
 //  isFocus?: boolean
 // }
 
-const Input = ({use="primary", type = 'text', placeholder, value, handler, isFocus = false }) => {
-		const inputRef = useRef(null)
+const Input = ({ use = "primary", type = "text", placeholder, value, handler, isFocus = false }) => {
+  const inputRef = useRef(null);
 
-		useEffect(() => {
-			if (inputRef.current && isFocus) {
-				inputRef.current.focus()
-			}
-		},[])
+  useEffect(() => {
+    if (inputRef.current && isFocus) {
+      inputRef.current.focus();
+    }
+  }, []);
 
-    return <input className='input' type={type} placeholder={placeholder} value={value} onInput={(event) => handler(event.target.value)} use={use} ref={inputRef} />
-}
+  return (
+    <input className="input" type={type} placeholder={placeholder} value={value} onInput={(event) => handler(event.target.value)} use={use} ref={inputRef} />
+  );
+};
 
 /*
 
@@ -34,4 +36,4 @@ browser DOM input->(hello) localState(hello) e.target.value
 
 */
 
-export default Input
+export default Input;
