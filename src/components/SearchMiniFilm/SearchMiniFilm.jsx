@@ -1,16 +1,15 @@
+import { FaImage } from "react-icons/fa";
 import "./searchMiniFilm.scss";
 
-const SearchMiniFilm = () => {
+const SearchMiniFilm = ({ poster, name, rating, year }) => {
   return (
     <div className="search-mini-film">
-      <div className="search-mini-film__img-wrapper">
-        <img className="search-mini-film__img" src="https://lipsum.app/random/80x120" alt="" />
-      </div>
+      <div className="search-mini-film__img-wrapper">{poster.previewUrl ? <img className="search-mini-film__img" src={poster.previewUrl} alt={name} /> : <FaImage />}</div>
       <div className="search-mini-film__wrapper">
-        <h3 className="search-mini-film__name">Lorem ipsum dolor sit amet.</h3>
+        <h3 className="search-mini-film__name">{name}</h3>
         <div className="search-mini-film__props">
-          <span className="search-mini-film__rating">5.0</span>
-          <span className="search-mini-film__year">2025</span>
+          <span className="search-mini-film__rating">{rating.imdb}</span>
+          <span className="search-mini-film__year">{year}</span>
         </div>
       </div>
     </div>

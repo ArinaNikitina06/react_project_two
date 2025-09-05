@@ -14,11 +14,22 @@ const Search = () => {
   const [movieList, setMovieList] = useState([]);
 
 const getMoviesFetchDebounce = useCallback(debounce(2000, (text) => {
-  getMovieByTitle(text)
-  .then((data) => console.log(data))
+  if (text.length === 0) {
+    return
+  }
+
+  getMovieByTitle(text).then((data) => {
+    setMovieList(data.docs)
+    setIsOpenRes(true)
+  });
 }), [])
 
-const searchHandler = (text) => { 
+const searchHandler = (text) => {
+  if (text.length===0) {
+    setMovieList([])
+    setIsOpenRes(false)
+  }
+
   setSearchText(text)
   getMoviesFetchDebounce(text);
 }
@@ -36,14 +47,11 @@ const searchHandler = (text) => {
       )}
 
       <div className={`search__res ${isOpenRes ? "search__res--active" : ""}`}>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
-        <SearchMiniFilm></SearchMiniFilm>
+        {
+          movieList.map(({id, poster, name, rating, year}) => {
+           return <SearchMiniFilm key={id} poster={poster} name={name} rating={rating} year={year}></SearchMiniFilm>;
+          })
+        }
       </div>
     </div>
   );
