@@ -34,6 +34,34 @@ const searchHandler = (text) => {
   getMoviesFetchDebounce(text);
 }
 
+// ----------------------
+  const keyPressEscHandler = (event) => {
+    if (event.code === "Escape") {
+      setIsOpenRes(false);
+      setMovieList([]);
+      setSearchText('')
+    }
+  };
+
+  const clickInEmptyHandler = (event) => {
+    if(!event.target.closest('.search')){
+        setIsOpenRes(false);
+      setMovieList([]);
+      setSearchText('')
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyPressEscHandler);
+    document.addEventListener("mousedown", clickInEmptyHandler);
+
+		// call before destroy Modal
+    return () => {
+      document.removeEventListener("keydown", keyPressEscHandler);
+      document.removeEventListener("mousedown", clickInEmptyHandler);
+    };
+  }, []);
+
   return (
     <div className="search">
       <div className="search__icon">
