@@ -38,8 +38,13 @@ export const getMovieByTitle = (title) => {
       "x-api-key": API_KEY,
     },
   })
-    .then((res) => res.json())
-    .then((data) => data);
+    .then((res) => {
+      if (res.ok === true) {
+        return res.json()
+      }
+    })
+    .then((data) => data)
+    .catch(error => error)
 }
 
 
